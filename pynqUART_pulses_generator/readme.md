@@ -10,7 +10,7 @@ The specifications for these boards can be found on the developer's website, Dig
 
 <h2>Workflow</h2>
 
-<h3>Hardware Design and Simulations for Data Transmission via the UART Protocol</h3>
+<h3>Design and Evaluation of the Hardware Module for UART Communication</h3>
 
 <h3>Software Design for Receiving Serialized Data and Analog Data Output via the DAC</h3>
 
