@@ -14,7 +14,7 @@ The specifications for these boards can be found on the developer's website, Dig
 
 <h3>Arduino Sketch for Receiving and Transmission of Serialized Data</h3>
 
-<h3>Hardware Design for Analog Reception</h3>
+<h3> XADC initialization & Hardware Design for Analog Reception</h3>
 
 <h3>Design of a Random Pulse Generator</h3>
 
