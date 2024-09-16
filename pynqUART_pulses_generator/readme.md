@@ -12,7 +12,7 @@ The specifications for these boards can be found on the developer's website, Dig
 
 <h3>Design and Evaluation of the Hardware Module for UART Communication</h3>
 
-<h3>Software Design for Receiving Serialized Data and Analog Data Output via the DAC</h3>
+<h3>Arduino Sketch for Receiving and Transmission of Serialized Data</h3>
 
 <h3>Hardware Design for Analog Reception</h3>
 
