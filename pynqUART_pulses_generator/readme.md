@@ -12,6 +12,7 @@ The specifications for these boards can be found on the developer's website, Dig
 
 <h3>Design and Evaluation of the Hardware Module for UART Communication</h3>
 
+Vivado es una suite de herramientas de diseño y síntesis de Xilinx para el desarrollo de sistemas basados en FPGAs que ofrece una variedad de funcionalidades para diseñar, simular y depurar sistemas digitales. Es necesario conocer cómo utilizar este conjunto de herramientas, por lo cual se recomienda consultar y revisar diferentes guías y tutoriales que proporcionan instrucciones detalladas sobre el uso de Vivado. Estos recursos pueden incluir documentación oficial, cursos en línea, foros de discusión y videos educativos, los cuales ayudarán a comprender mejor el entorno de desarrollo y las técnicas de diseño. **Nota Aclaratoria**: La versión de Vivado Design Suite usada es la 2022.2 [Download Vivado^TM](https://www.xilinx.com/support/download.html)
 <h3>Arduino Sketch for Receiving and Transmission of Serialized Data</h3>
 
 <h3> XADC initialization & Hardware Design for Analog Reception</h3>
