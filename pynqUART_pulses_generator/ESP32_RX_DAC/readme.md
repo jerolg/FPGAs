@@ -1,1 +1,1 @@
-**serialRX_DAC_ESP32_PULSE_GEN.ino** contains FreeRTOS implementation integrating three tasks (UART Acquisition, DAC Writing, Random Pulse Generator), while **serialRX_DAC_ESP32_V1.ino** includes only the first two tasks without the random pulse generation.
+**serialRX_DAC_ESP32_PULSE_GEN.ino** contains FreeRTOS implementation integrating three tasks (UART Acquisition, DAC Writing, Random Pulse Generator)
