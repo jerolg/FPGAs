@@ -10,43 +10,23 @@ The specifications for these boards can be found on the developer's website, Dig
 
 <h2>Workflow</h2>
 
-<h3>Design and Evaluation of the Hardware Module for UART Communication</h3>
-
 Vivado es una suite de herramientas de diseño y síntesis de Xilinx para el desarrollo de sistemas basados en FPGAs que ofrece una variedad de funcionalidades para diseñar, simular y depurar sistemas digitales. Es necesario conocer cómo utilizar este conjunto de herramientas, por lo cual se recomienda consultar y revisar diferentes guías y tutoriales que proporcionan instrucciones detalladas sobre el uso de Vivado. Estos recursos pueden incluir documentación oficial, cursos en línea, foros de discusión y videos educativos, los cuales ayudarán a comprender mejor el entorno de desarrollo y las técnicas de diseño. **Nota Aclaratoria**: La versión de Vivado Design Suite usada es la 2022.2 [Download Vivado<sup>TM</sup>](https://www.xilinx.com/support/download.html)
 
-Creemos un Nuevo Proyecto RTL en VHDL en Vivado
+**Apertura de un nuevo proyecto en Vivado y reconstrucción del diseño**
 
-**1. Abrir Vivado**
-- Inicia Vivado desde el menú de inicio o el icono correspondiente.
+**1.** Inicialmente vamos a crear un nuevo proyecto RTL en Vivado sin especificar las fuentes HDL
 
-**2. Crear un Nuevo Proyecto**
-- Selecciona **"Create New Project"** en la pantalla de inicio.
+![RTL new design](https://raw.githubusercontent.com/jerolg/FPGAs/refs/heads/main/pynqUART_pulses_generator/resources/RTL_new_proj.png "RTL new design")
 
-**3. Configuración del Proyecto**
-- **Project Name**: Introduce el nombre del proyecto.
-- **Location**: Elige la ubicación donde quieres guardar el proyecto.
-- Marca la opción **"Create project subdirectory"** y haz clic en **Next**.
+**2.** Después de haber creado el diseño y estar ubicados dentro de la interfaz del proyecto, en la esquina izquierda seleccionamos la opción ***add sources>add or create design sources*** e importamos todas las fuentes de diseño que se encuentran en la carpeta [**src**](https://github.com/jerolg/FPGAs/edit/main/pynqUART_pulses_generator/hardware_design/src/) 
 
-**4. Tipo de Proyecto**
-- Selecciona **"RTL Project"** (Proyecto RTL).
-- Marca **"Do not specify sources at this time"** si no tienes archivos VHDL listos, o selecciónalos si ya los tienes. Haz clic en **Next**.
+**3.** Ahora en la TCL console escribir `pwd` para ubicar la pocision actual donde la terminal se encuentra y verificar que el directorio sea la carpeta ***./bd/*** en caso contrario introducir `cd /ruta/al/directorio/donde/se/encuetra/el/proyecto/pynqUART_pulses_generator/bd/` y seguidamente volver a verificar por medio de `pwd` la ruta actual donde se encuentra.
 
-**5. Agregar Archivos de RTL**
-- Si no has añadido archivos aún, agrégalos en este paso:
-  - **Add Sources**: Añade los archivos VHDL.
-  - **Add Constraints**: Añade archivos de restricciones (XDC) si los tienes.
-  - **Add Simulation Sources**: Puedes añadir fuentes de simulación (opcional).
+**4.** Dentro de la TCL console ejecutar la siguiente instrucción **`source design_use_ZYNQ.tcl`** y presionar enter para realizar el autoruteo y reconexión del block design del proyecto usando las sources importadas y los diferentes IP-Cores dentro de la biblioteca de Vivado. Con lo cuál el proyecto estaria conectado como se puede ver en la siguiente imagen: 
 
-**6. Selección de la Familia de FPGA**
-- En la sección **boards** busca la tarjeta **PYNQ Z1** o **Arty Z7** selecciona tu FPGA basada en la serie y paquete que estés usando.
+![Block Design](https://raw.githubusercontent.com/jerolg/FPGAs/refs/heads/main/pynqUART_pulses_generator/resources/block_design.png "Block Design")
 
-**7. Resumen del Proyecto**
-- Verifica la configuración del proyecto y haz clic en **Finish** para crearlo.
 
-**8. Añadir Módulos VHDL**
-- En el panel de **Sources**, haz clic derecho y selecciona **Add Sources** para añadir archivos VHDL.
-- Selecciona **Create File** para crear un nuevo archivo VHDL.
-- Asigna un nombre al archivo y selecciona **VHDL** como tipo de archivo.
 
 <h3>Arduino Sketch for Receiving and Transmission of Serialized Data</h3>
 
