@@ -1,0 +1,76 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Texto en ingles
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Introduccion al experimento
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+The DUNE experiment (\textit{Deep Underground Neutrino Experiment}) aims primarily at the observation and detailed study of neutrinos, fundamental particles whose extremely weak interaction with matter, represented by their low cross-section of interaction ($10^{-45}$\SI{}{\meter^2}), makes them extremely difficult to detect \cite{Mishra1990}. However, these particles have the potential to reveal fundamental insights into the origins and evolution of the universe. In this context, the consortium responsible for the Photon Detection System (\textit{PDS}) has designed and developed a high-performance technological platform known as \textit{DAPHNE} (\textit{Detector electronics for Acquiring Photons from Neutrinos}). This system plays a crucial role in the acquisition and processing of data within the \textit{Far Detector}, ensuring accurate and efficient collection of the necessary scientific information, even under extreme operational conditions \cite{Abi2020}. % El experimento DUNE (\textit{Deep Underground Neutrino Experiment}) tiene como propósito principal la observación y el estudio detallado de los neutrinos, partículas fundamentales cuya interacción extremadamente débil con la materia, representada por su baja sección eficaz de interacción ($10^{-45}$\SI{}{\meter^2}), los hace sumamente difíciles de detectar \cite{Mishra1990}. Sin embargo, estas partículas tienen el potencial de revelar respuestas fundamentales sobre los orígenes y la evolución del universo. En este contexto, el consorcio encargado del Sistema de Detección de Fotones (\textit{PDS}) ha diseñado y desarrollado una plataforma tecnológica de alto rendimiento conocida como \textit{DAPHNE} (\textit{Detector electronics for Acquiring Photons from Neutrinos}). Este sistema desempeña un papel crucial en la adquisición y procesamiento de datos dentro del \textit{Far Detector}, asegurando una recopilación precisa y eficiente de la información científica necesaria, incluso bajo condiciones operativas extremas \cite{Abi2020}.
+
+
+
+As one of the main strategic projects in the field of particle physics, \textit{DUNE} is supported by the Particle Physics Project Prioritization Panel (\textit{P5}), which in its 2023 report emphasized the importance of Phases I and II to advance the understanding of neutrinos and their mechanisms of interaction and production \cite{DUNE_Phase_II}, \cite{P5_Report}. The \textit{Far Detector} of \textit{DUNE} consists of six cryostats containing a total of $70$ kilotons of liquid argon (\textit{LAr}), located \SI{1.5}{\kilo\meter} underground at Sanford, South Dakota. This environment presents significant challenges for maintenance and repair due to the extreme environmental conditions and limited access to the facilities \cite{Abi2020}. % Como uno de los principales proyectos estratégicos en el ámbito de la física de partículas, DUNE se encuentra respaldado por el Panel de Priorización de Proyectos de Física de Partículas (\textit{P5}), que en su informe de 2023 destacó la importancia de las fases I y II para avanzar en la comprensión de los neutrinos y sus mecanismos de interacción y producción \cite{DUNE_Phase_II}, \cite{P5_Report}. El \textit{Far Detector} de DUNE consiste en seis criostatos que contienen un total de 70 kilotoneladas de argón líquido (\textit{LAr}), situados a 1.5 km bajo la superficie en Sanford, Dakota del Sur. Este entorno plantea retos significativos para el mantenimiento y la reparación, dadas las condiciones ambientales extremas y el acceso limitado a las instalaciones \cite{Abi2020}. 
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Contexto del problema de DAPHNE
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+The \textit{DAPHNE} system consists of $150$ electronic boards, each of which integrates five AFE5808A (\textit{Analog Front End}) chips, designed to amplify, filter, and digitize signals from the SiPMs in the X-Arapucas \cite{Abi2020, Falcone2021}. Each board has $40$ acquisition channels that operate at a sampling rate of $62.5$ Msps with a $14$-bit resolution, generating an estimated aggregated data volume of $450$ Gbps. This demonstrates the ability of \textit{DAPHNE} to manage the complexity and high data requirements associated with the experiment \cite{Abi_2020, Abi2020C, Abi2020}. % El sistema \textit{DAPHNE} está compuesto por 150 tarjetas electrónicas, cada una de las cuales integra cinco AFE5808A (\textit{Analog Front End}), diseñados para amplificar, filtrar y digitalizar señales provenientes de los SiPM en las X-Arapucas. Cada tarjeta cuenta con 40 canales de adquisición que operan a una velocidad de muestreo de 62.5 Msps con una resolución de 14 bits, generando un volumen de datos agregado estimado en 450 Gbps. Esto demuestra la capacidad de \textit{DAPHNE} para gestionar la complejidad y los altos requisitos de datos asociados al experimento \hlcyan{otros} \cite{SystemSpecs2023}.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Versiones de DAPHNE
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+Since its initial implementation in $2019$, the \textit{DAPHNE} system has evolved through three versions, each developed to meet the growing demands of the \textit{PDS}. The initial architecture integrated an STM32H753II microcontroller for \textit{Slow Control} and an Artix-7 FPGA responsible for \textit{Fast Data Acquisition}. The microcontroller supervises key parameters such as voltages, gain settings, and peripheral configurations, using standard interfaces such as USART, SPI, and I2C. Meanwhile, the Artix-7 FPGA handles high-speed data processing and transmission \cite{STM32H753II}. % Desde su primera implementación en 2019, el sistema \textit{DAPHNE} ha evolucionado a través de tres versiones, cada una desarrollada para satisfacer las crecientes demandas del \textit{PDS}. La arquitectura inicial integró un microcontrolador STM32H753II para el \textit{Slow Control} y una FPGA Artix-7 responsable del \textit{Fast Data Acquisition}. El microcontrolador supervisa parámetros clave, como tensiones, ajustes de ganancia y configuraciones de periféricos, utilizando interfaces estándar como USART, SPI e I2C. Mientras tanto, la FPGA Artix-7 maneja el procesamiento y la transmisión de datos de alta velocidad \cite{STM32H753II}. 
+
+
+
+In $2022$, version $2.A$ of \textit{DAPHNE} introduced high-speed links based on Gigabit Ethernet, managed using the TCP/IP protocol. In $2023$, version $3$ introduced an optimized and compact architecture, using a Kria K26 \textit{System on Module}, which incorporates an ARM coprocessor and an embedded FPGA, significantly improving system efficiency \cite{DUNE_Far_Detector}. % En 2022, la versión 2 de \textit{DAPHNE} introdujo enlaces de alta velocidad basados en Gigabit Ethernet, gestionados mediante el protocolo TCP/IP. En 2023, la versión 3 presentó una arquitectura optimizada y compacta, utilizando un \textit{System on Module} Kria K26, que incorpora un coprocesador ARM y una FPGA embebida, mejorando significativamente la eficiencia del sistema \cite{DUNE_Far_Detector}. 
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Condiciones del experimento
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+The operating environment at Sanford presents significant technical challenges, such as extreme temperatures, high humidity, radiation exposure, and limited access to the underground caverns. Additionally, the current testing protocols for \textit{DAPHNE} are not fully standardized, leading to a reliance on specialized operators and the potential for systematic errors. These difficulties extend validation times and increase costs, compromising the experiment's timeline \cite{Esteban_Ferrer}. % El ambiente de operación en Sanford representa desafíos técnicos considerables, como temperaturas extremas, alta humedad, exposición a radiación y acceso limitado a las cavernas subterráneas. Adicionalmente, los protocolos de prueba actuales de \textit{DAPHNE} no están completamente estandarizados, lo que genera una dependencia de operadores especializados y puede derivar en errores sistemáticos. Estas dificultades prolongan los tiempos de validación y aumentan los costos, poniendo en riesgo el cronograma del experimento \cite{Esteban_Ferrer}.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Propuesta de solucion
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+To overcome these limitations, the Scientific Instrumentation and Microelectronics Group (\textit{GICM}) at the University of Antioquia is developing an automated test bench, designed according to standardized measurement protocols. This system aims to optimize testing times, minimize inconsistencies, and mitigate implementation risks. Additionally, the integration of artificial intelligence tools is being considered to analyze patterns in the operational conditions of the \textit{DAPHNE} boards, which will enable the implementation of preventive maintenance strategies, reduce failure incidence, and minimize human intervention. % Para superar estas limitaciones, el Grupo de Instrumentación Científica y Microelectrónica (\textit{GICM}) de la Universidad de Antioquia está desarrollando un banco de pruebas automatizado, diseñado bajo protocolos de medición estandarizados. Este sistema tiene como objetivo optimizar los tiempos de prueba, minimizar las inconsistencias y mitigar riesgos de implementación. Además, se plantea la integración de herramientas de inteligencia artificial para analizar patrones en las condiciones operativas de las tarjetas \textit{DAPHNE}, lo que permitirá implementar estrategias de mantenimiento preventivo, reducir la incidencia de fallas y minimizar la intervención humana \hlblue{otros} \cite{GICMDevelopment2023}.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Solucion de este articulo
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+The test bench will allow measurements of critical parameters, such as operating voltages, the impedance of the boards, and the performance of the signal digitization and transmission systems. This article focuses on the progress made in the evaluation of the digitization systems, concentrating on the generation of simulated signals for the performance evaluation of the \textit{DAPHNE} board's digitization, assessing its stability and reliability through the use of programmable logic gate arrays (\textit{FPGA}), key tools to ensure the success of the DUNE experiment. % El banco de pruebas permitirá realizar mediciones de parámetros críticos, como los voltajes de operación, las impedancias de las tarjetas y el desempeño de los sistemas de digitalización y transmisión de señales. Este artículo se centra en los avances logrados en la evaluación de los sistemas de digitalización, enfocándose en generacion de señales simuladas para la evaluacion del rendimiento en la digitalizacion  de la tarjeta \textit{DAPHNE}, evaluando su estabilidad y confiabilidad mediante el uso de matrices de puertas lógicas programables (\textit{FPGA}), herramientas clave para asegurar el éxito del experimento DUNE.
+
+
+
+
